@@ -1,0 +1,6 @@
+[ 
+    {"nome": "Masculino", "sigla": "M"},
+    {"nome": "Feminino", "sigla": "F"},
+    {"nome": "Neutro", "sigla": "N"},
+    {"nome": "Outro", "sigla": "O"}
+]

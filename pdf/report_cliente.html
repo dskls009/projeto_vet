@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Relatório</title>
+    <style>
+        h2{
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            color: #000;
+        }
+        table{
+            width:100%;
+            table-layout: auto;
+        }
+        table{
+            border: #333 1px solid;
+            padding: 1px;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+        }
+        td{
+            background-color: #eee;
+            color: #333;
+        }
+        th {
+            background-color: #bbb;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+        <h2>Relatórios de Clientes</h2>
+        <table>
+            <tr>
+                {%for col in colunas%}
+                <th>
+                    {{col|upper}}
+                </th>
+                {%endfor%}
+            </tr>
+
+            {%for cliente in relatorio%}
+            <tr class="data">
+                {%for key, val in cliente.items%}
+                <td>
+                    {%if val|lower == "true"%} 
+                    Sim 
+                    {%elif val|lower == "false"%} 
+                    Não
+                    {%elif val|lower == "m"%} 
+                    Masculino 
+                    {%elif val|lower == "f"%}
+                    Feminino 
+                    {%elif val|lower == "n"%} 
+                    Neutro 
+                    {%elif val|lower == "o"%} 
+                    Outro 
+                    {%else%} 
+                    {{val}} 
+                    {%endif%}
+                </td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+</body>
+
+</html>
